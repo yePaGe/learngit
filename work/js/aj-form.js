@@ -1,3 +1,10 @@
-/**
- * Created by Administrator on 2017/4/16.
- */
+angular.module('myApp', [])
+    .controller('MainController',function($scope)
+    {
+        $scope.userData={};
+        $scope.submitForm=function()
+        {
+            console.log($scope.userData);
+
+        }
+    });
