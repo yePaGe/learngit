@@ -10,19 +10,26 @@ $(function () {
     }
     //帐号框和密码框的样式效果；
     //输入框聚焦时的效果；
-    $(".accounterInput").focus(function () {
+    $(".accounterInput").click(function () {
         $(".acc").hide();
         $(this).next().show();
         $(this).parents(".accounter").css("border-color","rgba(240,68,0,1)");
         event.stopPropagation();
     });
+    $(".accounterInput:eq(0)").click(function () {
+        $(".acc1").attr("src","../work/picture/account1.png")
+    });
+    $(".accounterInput:eq(1)").click(function () {
+        $(".pass1").attr("src","../work/picture/lock1.png")
+    });
+
     $(".acc").click(function () {
         $(this).prev().val("");
         $(this).hide();
         event.stopPropagation();
     });
     //聚焦body时，文字删除键隐藏；
-    $("body").focus(function () {
+    $("body").click(function () {
         $(".acc").hide();
     });
     //帐号框失去焦点时的效果；
@@ -35,15 +42,17 @@ $(function () {
             $(".alertWin").css("display","-webkit-flex");
             $(".alertMess").html("帐号的字符数不能超过10个！");
         }
-        $(".accounter").css("border-color","rgba(240,240,240,1)");
+        $(this).prev().attr("src","../work/picture/account.png");
+        $(this).parents(".accounter").css("border-color","rgba(240,240,240,1)");
             });
 
 
     //密码框失去焦点时动态效果；
     $(".accounterInput:eq(1)").blur(function () {
        var m = getString(this.value,this.value[0]);
-        $(".accounter").css("border-color","rgba(240,240,240,1)");
-       if(m == this.value.length){
+        $(this).prev().attr("src","../work/picture/lock.png");
+        $(this).parents(".accounter").css("border-color","rgba(240,240,240,1)");
+      if(m == this.value.length){
            $(".alertWin").css("display","-webkit-flex");
            $(".alertMess").html("密码不应该为相同的字符！！！");
        }
