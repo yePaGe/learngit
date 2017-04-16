@@ -1,4 +1,5 @@
 $(function () {
+    //获取相同字符的个数；
     function getString(str,n) {
         var tmp = 0;
         for(var i=0;i<str.length;i++){
@@ -7,9 +8,10 @@ $(function () {
             }
         }return tmp;
     }
+    //帐号框和密码框的样式效果；
     var myAccount =$(".accounterInput:eq(0)");
     var myPasswords = $(".accounterInput:eq(1)");
-
+    //输入框聚焦时的效果；
     myAccount.focus(function () {
         $(".acc:eq(1)").hide();
         $(".acc:eq(0)").show();
@@ -25,7 +27,7 @@ $(function () {
         $(".acc:eq(1)").show();
         $(".accounter").css("border-color","rgba(240,68,0,1)")
     });
-
+    //输入框失去焦点时的效果；
     myAccount.blur(function () {
         var retN = /([^\w\d_])+/g;
         if(retN.test(this.value)){
@@ -53,12 +55,15 @@ $(function () {
        }
     });
 
+   //登录按钮动态效果；点击验证帐号密码并跳转到主页；
     $(".loginBtnInput").click(function () {
         var $docWidth = $(document).width();
         $(".loginWin").animate({
             left:$docWidth+"px"
         },1000);
     });
+
+    //右上角交叉按钮；点击判断离开当前页面还是留下
     $(".choose").click(function () {
         $(".comfWin").css("display","-webkit-flex");
         $(".comfBtn>input").click(function () {
