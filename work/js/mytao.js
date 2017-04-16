@@ -9,26 +9,24 @@ $(function () {
         }return tmp;
     }
     //帐号框和密码框的样式效果；
-    var myAccount =$(".accounterInput:eq(0)");
-    var myPasswords = $(".accounterInput:eq(1)");
     //输入框聚焦时的效果；
-    myAccount.focus(function () {
-        $(".acc:eq(1)").hide();
-        $(".acc:eq(0)").show();
-        $(".accounter0").css("border-color","rgba(240,68,0,1)");
+    $(".accounterInput").focus(function () {
+        $(".acc").hide();
+        $(this).next().show();
+        $(this).parents(".accounter").css("border-color","rgba(240,68,0,1)");
+        event.stopPropagation();
     });
-    $(".acc").focus(function () {
+    $(".acc").click(function () {
         $(this).prev().val("");
         $(this).hide();
+        event.stopPropagation();
     });
-
-    myPasswords.focus(function () {
-        $(".acc:eq(0)").hide();
-        $(".acc:eq(1)").show();
-        $(".accounter").css("border-color","rgba(240,68,0,1)")
+    //聚焦body时，文字删除键隐藏；
+    $("body").focus(function () {
+        $(".acc").hide();
     });
-    //输入框失去焦点时的效果；
-    myAccount.blur(function () {
+    //帐号框失去焦点时的效果；
+    $(".accounterInput:eq(0)").blur(function () {
         var retN = /([^\w\d_])+/g;
         if(retN.test(this.value)){
             $(".alertWin").css("display","-webkit-flex");
@@ -37,16 +35,12 @@ $(function () {
             $(".alertWin").css("display","-webkit-flex");
             $(".alertMess").html("帐号的字符数不能超过10个！");
         }
-        $(".accounter0").css("border-color","rgba(240,240,240,1)");
+        $(".accounter").css("border-color","rgba(240,240,240,1)");
             });
 
-    $(".alertBtn").click(function () {
-        $(".alertWin").css("display","none");
-        $(".accounterInput").val("");
-        $(".acc").hide();
-    });
 
-   myPasswords.blur(function () {
+    //密码框失去焦点时动态效果；
+    $(".accounterInput:eq(1)").blur(function () {
        var m = getString(this.value,this.value[0]);
         $(".accounter").css("border-color","rgba(240,240,240,1)");
        if(m == this.value.length){
@@ -55,6 +49,12 @@ $(function () {
        }
     });
 
+    //输入框验证错误时弹出提示框；点击表示收起提示框；
+    $(".alertBtn").click(function () {
+        $(".alertWin").css("display","none");
+        $(".accounterInput").val("");
+
+    });
    //登录按钮动态效果；点击验证帐号密码并跳转到主页；
     $(".loginBtnInput").click(function () {
         var $docWidth = $(document).width();
