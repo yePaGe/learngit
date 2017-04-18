@@ -20,19 +20,20 @@
 
             countTime();
             function countTime() {
-                var $today = new Date();
-                var $lastday = new Date("2017/4/11,14:59:00");
-                var $lefttime = parseInt($lastday.getTime()-$today.getTime());
-                var $d = parseInt($lefttime/(1000*60*60*24)),
-                    $h = parseInt($lefttime/(1000*60*60)%24),
-                    $m = parseInt($lefttime/(1000*60)%60),
-                    $s = parseInt($lefttime/(1000)%60);
-                $("#day").html($d);
-                $("#hours").html($h);
-                $("#minute").html($m);
-                $("#second").html($s);
-                if($lefttime<0){
-                    $(".clock").empty().append("<span>抢购结束！</span>");
+                var today = new Date();
+                var lastday = new Date("2017/4/21,14:59:00");
+                var lefttime = parseInt(lastday.getTime()-today.getTime());
+                var d = parseInt(lefttime/(1000*60*60*24)),
+                    h = parseInt(lefttime/(1000*60*60)%24),
+                    m = parseInt(lefttime/(1000*60)%60),
+                    s = parseInt(lefttime/(1000)%60);
+               // alert(h);
+                document.getElementById("day").innerHTML=d;
+                document.getElementById("hours").innerHTML=h;
+              document.getElementById("minute").innerHTML=m;
+                document.getElementById("second").innerHTML=s;
+                if(lefttime<0){
+                    document.getElementsByClassName("clock").empty().append("<span>抢购结束！</span>");
                 }
                 setTimeout(countTime,500);
             }
