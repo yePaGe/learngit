@@ -23,6 +23,5 @@ angular.module('myApp', [])
            sco.$watch('orgText',function () {
                con.$validate();
            })
-        };
-        return o;
+        }
     });
