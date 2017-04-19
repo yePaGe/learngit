@@ -9,6 +9,14 @@ body{
 li{
     list-style: none;
 }
+a{
+    color: rgba(153,164,188,1);
+}
+a:hover{
+    text-decoration: none;
+    color:rgba(200,22,35,1);
+    cursor: pointer;
+}
 /*nav*/
 #topPic{
     position: relative;
@@ -23,11 +31,14 @@ li{
     margin: 0 auto;
 }
 .top-nav{
+    z-index: 10;
     background-color:rgba(227,228,229,1);
     height: 30px;
 
 }
 .top-nav>.w{
+    z-index: 10;
+    position: relative;
     display: block;
     margin: 0 auto;
     width: 1200px;
@@ -35,13 +46,46 @@ li{
 }
 .top-nav .location{
      float:left;
-     width: 250px;
+    margin-left: 215px;
+    width:60px ;
      height: 30px;
      line-height: 30px;
      text-align: right;
     font-size: 12px;
     color: rgba(153,164,188,1);
+}
+.loc{
+    text-align: center;
+    cursor: pointer;
+}
+.locationHover{
+    background-color: #fff;
 
+}
+.messChoose{
+    background-color: rgba(241,2,21,1);
+}
+
+.locationMess{
+     position: absolute;
+     top:30px;
+     left: 215px;
+     display:none;
+     z-index: 99;
+     padding: 10px;
+     width: 320px;
+    box-shadow: 0 6px 10px  rgba(0,0,0,0.2);
+     background-color: rgba(255,255,255,1);
+ }
+.locationMess ul li a{
+    text-align: center;
+    display: block;
+    float: left;
+    margin:3px 7px;
+    width: 45px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 2px;
 }
 .glyphicon-map-marker{
     color:rgba(241,2,21,1);
@@ -69,26 +113,64 @@ li{
 }
 
 .nav-right>ul>.login{
-    width: 75px!important;
+    width: 80px!important;
 }
-.signIn{
+.signIn a{
     color:rgba(241,2,21,1) !important;
 }
-.nav-right>ul>li:hover{
-    color:rgba(200,22,35,1);
-    cursor: pointer;
-}
+
 .list-divider{
     width: 10px!important;
+    float: left;
 }
+.nav > li > a{
+    padding: 5px 0!important;
+}
+.mess{
+    position: relative;
+}
+.topshow{
+    position: absolute;
+    left: 1px;
+    top:28px;
+    display:none;
+    background-color: #fff;
+    width: 230px;
+    box-shadow: 0 6px 10px  rgba(0,0,0,0.2);
+}
+.hr{
+    height:110px;
+    border-left: 15px solid #fff;
+    border-right: 15px solid #fff;
+    border-bottom: 2px solid #efefef;
+}
+.hr1{
+    height:80px;
+    border-left: 15px solid #fff;
+    border-right: 15px solid #fff;
+}
+.hr2{
+    height:180px;
+    border-left: 15px solid #fff;
+    border-right: 15px solid #fff;
+    border-bottom: 2px solid #efefef;
 
+}
+.topshow>ul>li>a{
+    margin:8px 15px;
+    text-align:left;
+    float: left;
+    display: block;
+    width: 60px;
+    height: 20px;
+    line-height: 20px;
+}
 /*article*/
 article{
     position: relative;
     width: 1200px;
     margin: 0 auto;
     height: 3000px;
-    border: 1px solid #000;
 }
 .logoPic{
     background-color: #ffffff;
@@ -105,6 +187,13 @@ article{
     width: 550px;
     margin:30px auto;
 }
+.carousel-indicators{
+    width:150px;
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 9px;
+}
+
+
 .red {
     border: 1px solid rgba(217, 83, 79, 1);
 }
@@ -112,7 +201,6 @@ input:focus{
     outline: none!important;
     border-color: rgba(217,83,79,1)!important;
     box-shadow: none!important;
-    border-radius:none!important;
 }
 .searchList>li{
     float: left;
@@ -121,10 +209,7 @@ input:focus{
     color: rgba(153,164,188,1);
 
 }
-.searchList>li:hover{
-    color:rgba(200,22,35,1);
-    cursor: pointer;
-}
+
 .shoppingCartList{
     position: absolute;
     right:0;
@@ -136,8 +221,11 @@ input:focus{
     background-color: #fff;
     border: 1px solid rgba(222,222,220,1);
     text-align: center;
+    color:rgba(241,2,21,1);
+    cursor: pointer;
 }
 .cartCol{
+    padding-right: 20px;
     width: 16px;
     height: 16px;
     color:rgba(241,2,21,1);
@@ -154,6 +242,16 @@ input:focus{
 .goodsList li{
     margin: 10px 0;
     font-size: 14px;
+    color: rgba(255,255,255,1);
+}
+.goodsList li a{
+    margin: 0 3px;
+    color: rgba(255,255,255,1);
+}
+.goodsList li a:hover{
+    text-decoration: none;
+    color:rgba(200,22,35,1);
+    cursor: pointer;
 }
 
 .slideCon{
@@ -167,7 +265,15 @@ input:focus{
      width: 80px;
      text-align: center;
      font-family: "黑体", "Times New Roman";
- }
+}
+.goodsTitle li a{
+    color: rgba(85,85,128,1);
+}
+.goodsTitle li a:hover{
+    text-decoration: none;
+    color:rgba(200,22,35,1);
+    cursor: pointer;
+}
 .carousel{
     margin-top: 30px;
     width: 789px!important;
@@ -229,24 +335,27 @@ footer{
 
 }
 .map{
+    width: 200px;
+    height: 150px;
+    background:url("../picture/jingdong/ico_footer.png") no-repeat 0 0px;
+;
     text-align: left!important;
 }
 .message{
+    position: relative;
     margin-bottom: 20px;
 }
-.message>div>ul>li{
+.message div ul li{
     float: left;
     color: rgba(153,164,188,1);
     text-align: center;
     font-size: 12px;
+    margin-right:5px ;
 }
-.message div{
-    position: relative;
-    left: 0;
-    right: 0;
+
+.message ul{
     display: block;
-    margin: 0 auto;
-    height: 12px;
+    height: 16px;
 }
 .footerPic{
     display: block;
@@ -260,7 +369,7 @@ footer{
     width: 100px;
     height: 35px;
     float: left;
-    margin: 0 30px;
+    margin: 0 35px;
 }
 .pic1{
     background: url("../picture/jingdong/ico_footer.png") no-repeat 0 -150px;
