@@ -1,5 +1,6 @@
 $(function () {
   timeCount();
+   // srollShow();
 });
 
 
@@ -63,21 +64,27 @@ $(function () {
             var lName = $(this).text();
             $(".lo").text(lName);
             $(this).parents(".locationMess").hide();
+            $(".locCh").removeClass("locCh");
+            $(this).addClass("locCh");
+            //$(this).css("background-color","red");
+            // alert($(this).id);
         }
     });
-    $(".location").mouseover(function () {
-        $(".locationMess").show();
-        $(this).addClass("locationHover");
-       /* $(".locationMess>ul>li>a").forEach(function () {
-           var name = $(this).text();
-           if(name==$(".lo").text()){
-               $(this).addClass("messChoose");
-           }
-        });*/
-    });
-    $(".location").mouseout(function () {
-        $(this).removeClass("locationHover");
-        $(".locationMess").hide();
+    $(".location").on({
+        mouseover: function () {
+            $(".locationMess").show();
+            $(this).addClass("locationHover");
+            /* $(".locationMess>ul>li>a").forEach(function () {
+             var name = $(this).text();
+             if(name==$(".lo").text()){
+             $(this).addClass("messChoose");
+             }
+             });*/
+        },
+        mouseout: function () {
+            $(this).removeClass("locationHover");
+            $(".locationMess").hide();
+        }
     });
 
     $(".goodsList>ul>li").on({
@@ -115,6 +122,33 @@ $(function () {
 
       }
     });
+    $(".goods").on({
+        mouseenter:function () {
+            $(this).children(".pic").children("img").stop().animate({
+                "top":"-10px"
+            },500)
+        },
+        mouseleave:function () {
+            $(this).children(".pic").children("img").stop().animate({
+                "top":"0"
+            },500)
+        }
+    });
+    $(window).scroll(function (event) {
+        var hhh= $(window).scrollTop();
+        console.log(hhh);
+        if(hhh>300){
+            $("#scrollTop").stop().animate({
+                "top":"0"
+            },50);
+        }else {
+            $("#scrollTop").stop().animate({
+                "top":"-70px"
+            },50);
+
+        }
+    });
+
 
 
 
