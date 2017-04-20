@@ -1,4 +1,46 @@
+$(function () {
+  timeCount();
+});
 
+
+    function timeCount() {
+        var today = new Date(),
+            lastday = new Date("2017/4/25,20:20:40"),
+            leftTime = parseInt(lastday.getTime()-today.getTime()),
+            hour = parseInt(leftTime/1000/60/60),
+            minute = parseInt(leftTime/1000/60%60),
+            second = parseInt(leftTime/1000%60);
+        $(".hour").html(hour);
+        $(".minute").html( minute);
+        $(".second").html(second);
+        var hl = $(".hour").html().length,
+            ml = $(".minute").html().length,
+            sl = $(".second").html().length;
+     if(sl!=2){
+            $(".second").html("0"+second);
+        }else {
+            $(".second").html(second);
+            }
+        if(ml!=2){
+            $(".minute").html("0"+minute);
+        }else {
+            $(".minute").html( minute);
+        }
+        if(hl==1){
+            $(".hour").html("0"+hour);
+        }else {
+            $(".hour").html(hour);
+        }
+       // console.log(hl);
+       // console.log(ml);
+       // console.log(sl);
+        //alert();
+        setTimeout(timeCount,1000);
+
+
+
+
+    }
     $(".mess").on({
         mouseover:function () {
             $(this).addClass("active");
@@ -43,12 +85,35 @@
           // alert("");
            $(this).css("background-color","rgba(153,164,188,0.3) ");
            $(this).children("div").show();
+           var h0 =( $(this).index()+1)*30;
+         //  alert(h0);
+           var h=$(this).children("div").height();
+           var h1 = h0-h+30;
+           if(h<h0){
+               $(this).children("div").css("top",h1+"px");
+           }
        } ,
         mouseout:function () {
             $(this).css("background-color","rgba(110,101,104,1)");
             $(this).children("div").hide();
 
         }
+    });
+    $("#left>li").mouseover(function () {
+      var index = $(this).index();
+      //console.log(index);
+      if(index == 0){
+          $("#move").stop().animate({
+             "left":"10px"
+          });
+          $(".chuxiao").show();
+      }else if(index == 1){
+          $("#move").stop().animate({
+              "left":"60px"
+          });
+          $(".chuxiao").hide();
+
+      }
     });
 
 

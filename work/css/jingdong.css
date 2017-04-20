@@ -309,26 +309,15 @@ input:focus{
     position: relative;
     width: 190px;
     background-color: rgba(110,101,104,1);
-    padding:15px;
+    padding:15px 10px 0 10px;
     margin-top: 135px;
     margin-right: 10px!important;
     float: left;
 }
-.listCon{
-    position: absolute;
-    top: 0;
-    left: 180px;
-    display:none;
-    z-index: 99;
-    width: 1020px;
-    height: 500px;
-    background-color: #efefef; ;
-}
-.goodsList:hover .listCon{
-    display: block;
-}
+
 .goodsList li{
-    margin: 10px 0;
+    margin: 0;
+    height: 30px;
     font-size: 14px;
     color: rgba(255,255,255,1);
 }
@@ -345,7 +334,7 @@ input:focus{
     position: absolute;
     top:0;
     left: 180px;
-    display: none;
+    display:none;
     z-index: 99;
     width: 1020px;
     background-color: #efefef;
@@ -388,7 +377,8 @@ input:focus{
 .slideCon{
     float: left;
     width: 790px;
-    margin-top: 110px;
+    margin-top: 105px;
+    z-index: 99;
 }
 .goodsTitle li{
      float: left;
@@ -416,6 +406,285 @@ input:focus{
     display: block;
     width: 100%!important;
     height:340px!important;
+}
+
+.right-nav{
+    background-color: #fff;
+    position: relative;
+    margin-top: 135px;
+    width: 200px;
+    float: right;
+
+}
+.signUp{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 200px;
+    border-bottom: 2px solid rgba(227,228,229,1);
+    font-size: 12px;
+}
+.signUp .photo{
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 20px 0 0 20px;
+    width: 50px;
+    height: 50px;
+    float: left;
+    background: url("../css/picture/jingdong/circle.png")  -70px 0 no-repeat;
+    z-index: 5;
+}
+.signUp img {
+    position: relative;
+    top: 0;
+    left: -70px;
+    width: 50px;
+    margin: 20px;
+}
+.signUp .photoMess{
+    background-color: #fff;
+    position:absolute;
+    top: 0;
+    right: 0;
+    padding-left: 10px;
+    padding-top: 20px;
+    float: right;
+    width: 120px;
+    height: 100px;
+}
+.signUp .photoBtn{
+    background-color: #fff;
+    position: relative;
+    top:0;
+    left: 0;
+    right: 0;
+    padding:5px 5px;
+    display: block;
+    width: 100%;
+    height: 45px;
+
+}
+.signUp .photoBtn .pBtn{
+    height: 25px;
+    width: 75px;
+    background: #fff;
+    color: red;
+    border: 2px solid red;
+    display: block;
+    float: left;
+    margin: 0 8px;
+}
+.signUp .photoBtn .pBtn:hover{
+    background-color: red;
+    color: white;
+
+}
+.announcement{
+    position: relative;
+    top:0;
+    left: 0;
+    height: 130px;
+    border-bottom: 1px solid rgba(227,228,229,1);
+}
+.announcement ul li{
+    display: block;
+    float: left;
+    width: 40px;
+    height: 25px;
+    margin-top: 5px;
+    margin-left:5px;
+    text-align: center;
+    font-size: 12px;
+    cursor: pointer;
+
+}
+.announcement ul{
+    height: 25px;
+    border-bottom: 1px solid rgba(227,228,229,1);
+}
+#move{
+    position: absolute;
+    top:22px;
+    left: 10px;
+    width: 28px;
+    background-color: red;
+    height: 4px;
+}
+.gonggao,.chuxiao{
+    position: absolute;
+    top:30px;
+    left: 0;
+    display: block;
+    padding-left: 10px;
+    background-color: #fff;
+    width: 200px;
+    margin-top: 10px;
+}
+.announcement div a{
+    font-size: 12px;
+}
+.huafei{
+    background: url("../css/picture/jingdong/btnpic.png") 12px -80px no-repeat;
+}
+.jipiao{
+    background: url("../css/picture/jingdong/btnpic.png") 12px -37px no-repeat;
+}
+.hotel{
+    background: url("../css/picture/jingdong/btnpic.png") -75px -35px no-repeat;
+}
+.game{
+    background: url("../css/picture/jingdong/btnpic.png") -75px 10px no-repeat;
+}
+.qiye{
+    background: url("../css/picture/jingdong/btnpic.png") -75px -36px no-repeat;
+}
+.jiayou{
+    background: url("../css/picture/jingdong/btnpic.png") 10px 10px no-repeat;
+}
+.movie{
+    background: url("../css/picture/jingdong/btnpic.png") -32px -36px no-repeat;
+}
+.huochepiao{
+    background: url("../css/picture/jingdong/btnpic.png") -75px -80px no-repeat;
+}
+.zhongchou{
+    background: url("../css/picture/jingdong/btnpic.png") -120px 10px no-repeat;
+}
+.licai{
+    background: url("../css/picture/jingdong/btnpic.png") -120px -36px no-repeat;
+}
+.persent{
+    background: url("../css/picture/jingdong/btnpic.png") -120px -80px no-repeat;
+}
+.baitiao{
+    background: url("../css/picture/jingdong/btnpic.png") -32px 10px no-repeat;
+}
+.chooseBtn .row .col-xs-3{
+    height: 70px;
+    text-align: center;
+    padding: 45px 0 5px 0;
+    font-size: 12px;
+    border-bottom: 1px solid rgba(227,228,229,1);
+    border-right: 1px solid rgba(227,228,229,1);
+}
+.chooseBtn .row .col-xs-3 a{
+    color: #000!important;
+    display: block;
+    height: 24px!important;
+    background-color: #fff;
+}
+.chooseBtn .row .col-xs-3 a:hover{
+    text-decoration: none;
+    color:rgba(200,22,35,1)!important;
+}
+.cm img{
+    margin: 5px 0 0 0;
+}
+/*articlemaincontain*/
+.jingdongmiaosha{
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-top: 620px;
+    width: 1200px;
+    height: 500px;
+
+
+}
+.jingdongmiaosha .jdmshTop{
+    position: relative;
+    width: 1200px;
+    background:url("../css/picture/jingdong/redtop.png") -1px 0 no-repeat;
+    background-size: 100%;
+    height: 60px;
+}
+.mshJiao{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    background:url("../css/picture/jingdong/icon.png")-195px -50px no-repeat;
+    width: 20px;
+    height: 20px;
+}
+.mshClockPic{
+    position: absolute;
+    top: 0;
+    left: 30px;
+    display: block;
+    background:url("../css/picture/jingdong/icon.png")0 -30px no-repeat;
+    width: 30px;
+    height:55px;
+}
+.mshWord{
+    position: absolute;
+    top: 0;
+    left: 80px;
+    display: block;
+    width: 550px;
+}
+.mshWord h3{
+    margin-top: 15px!important;
+    color: #fff!important;
+}
+.mshWord h3 small{
+    font-size: 14px!important;
+    color: #fff!important;
+}
+.mshaClock{
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    float: right;
+    width: 350px;
+}
+.mshaClock p span small{
+    color: #fff!important;
+    font-size: 14px;
+    margin-top: 15px;
+    display: block;
+}
+.mshaClock p span{
+    float: left;
+}
+.hour,.minute,.second,.dot{
+    font-size: 28px!important;
+    text-align: center;
+}
+.dot{
+    color: #fff!important;
+
+}
+.hour,.minute,.second{
+    background-color: rgba(0,0,0,0.7);
+    border-radius: 5px;
+    width: 50px;
+    height: 35px;
+    display: block;
+    float: left;
+    margin: 5px;
+    color: rgba(224,18,34,1)!important;
+
+}
+/*goodshow*/
+.goodShow{
+    background-color: #fff;
+    height: 250px;
+}
+.goodShow .col-xs-3{
+    margin-top: 15px;
+    text-align: center;
+    border-right:1px solid rgba(227,228,229,1) ;
+}
+.box-shadow{
+    height: 15px;
+    width: 200px;
+    background: url("../css/picture/jingdong/icon.png") 15px -10px no-repeat;;
+}
+.goodShow .row .col-xs-2{
+    padding: 10px;
 }
 /*footer*/
 footer{
