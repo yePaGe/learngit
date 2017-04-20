@@ -38,6 +38,19 @@
         $(".locationMess").hide();
     });
 
+    $(".goodsList>ul>li").on({
+       mouseover:function () {
+          // alert("");
+           $(this).css("background-color","rgba(153,164,188,0.3) ");
+           $(this).children("div").show();
+       } ,
+        mouseout:function () {
+            $(this).css("background-color","rgba(110,101,104,1)");
+            $(this).children("div").hide();
+
+        }
+    });
+
 
 
 
